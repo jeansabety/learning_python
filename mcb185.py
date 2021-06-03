@@ -121,5 +121,15 @@ def orfseq(seq):
 					stop = j 
 					break 
 			if stop != None: yield seq[start:stop] #yield returns one at a time - doesnt create the whole list, does one at a time 
+			
+#entropy
+import math
+def entropy(prob):
+	assert(math.isclose(sum(prob), 1.0))
+	h = 0 
+	for i in range(len(prob)): 
+		if prob[i] != 0: h -= prob[i] * math.log2(prob[i])
+	return(h)
+
 	
 		
